@@ -217,7 +217,9 @@ def test_delete_nonexistent_user(client, get_access_token) -> None:
 def test_search_nonexistent_user(client, app, get_access_token) -> None:
     """Test searching for a nonexistent user."""
     with app.app_context():
-        admin_user = User(username="admin_user", password="admin_password", role=UserRoles.ADMIN)
+        admin_user = User(
+            username="admin_user", password="admin_password", role=UserRoles.ADMIN
+        )
         db.session.add(admin_user)
         db.session.commit()
 

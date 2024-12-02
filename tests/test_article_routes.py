@@ -129,9 +129,12 @@ def test_invalid_article_id(client, get_access_token) -> None:
     data = response.get_json()
     assert data["message"] == "Article not found"
 
+
 def test_editor_cannot_delete_articles(client, app, get_access_token) -> None:
     with app.app_context():
-        editor_user = User(username="editor_user", password="editor_password", role=UserRoles.EDITOR)
+        editor_user = User(
+            username="editor_user", password="editor_password", role=UserRoles.EDITOR
+        )
         article = Article(title="Undeletable Article", content="Protected", user_id=1)
         db.session.add_all([editor_user, article])
         db.session.commit()
@@ -156,10 +159,14 @@ def test_missing_authorization(client) -> None:
     assert data["msg"] == "Missing Authorization Header"
 
 
-def test_viewer_cannot_create_article_for_another_user(client, app, get_access_token) -> None:
+def test_viewer_cannot_create_article_for_another_user(
+    client, app, get_access_token
+) -> None:
     """Test Viewer cannot create an article for another user."""
     with app.app_context():
-        viewer_user = User(username="viewer_user", password="viewer_password", role=UserRoles.VIEWER)
+        viewer_user = User(
+            username="viewer_user", password="viewer_password", role=UserRoles.VIEWER
+        )
         db.session.add(viewer_user)
         db.session.commit()
 
@@ -183,7 +190,6 @@ def test_viewer_cannot_create_article_for_another_user(client, app, get_access_t
     assert response.status_code == 403
     data = response.get_json()
     assert data["message"] == "Access denied"
-
 
 
 def test_create_article_missing_data(client, get_access_token) -> None:
