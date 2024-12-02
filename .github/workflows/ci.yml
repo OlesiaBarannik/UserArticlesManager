@@ -1,23 +1,41 @@
-#UserArticlesManager/.githab-ci.yml
-stages:
-  - test
+name: CI/CD Pipeline
 
-test:
-  stage: test
-  image: python:3.12
-  before_script:
-    - pip install poetry
-    - poetry install
-  script:
-    - poetry --version
-    - python --version
-    - poetry run mypy . --exclude migrations/env.py
-    - poetry run black --check .
-  cache:
-    key: ${CI_COMMIT_REF_SLUG}
-    paths:
-      - .cache/pypoetry
-      - poetry.lock
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
-  only:
-    - main
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container:
+      image: python:3.12
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Poetry
+        run: pip install poetry
+
+      - name: Install dependencies
+        run: poetry install
+
+      - name: Check Poetry and Python versions
+        run: |
+          poetry --version
+          python --version
+
+      - name: Static type checking with mypy
+        run: poetry run mypy . --exclude migrations/env.py
+
+      - name: Code formatting check with Black
+        run: poetry run black --check .
+
+    cache:
+      key: ${{ runner.os }}-poetry-${{ github.sha }}
+      paths:
+        - .cache/pypoetry
+        - poetry.lock
