@@ -1,0 +1,325 @@
+{
+	"info": {
+		"_postman_id": "2b5316fb-3232-4b7b-9538-af2c7f068aa8",
+		"name": "Articles_Manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "32252476"
+	},
+	"item": [
+		{
+			"name": "update_users_id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMjk3NjE0MCwianRpIjoiZmRiZTEyNTktMmE3Ni00ZTNkLTlmZTMtYTgxMzAyYWVhMzRjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3MzI5NzYxNDAsImNzcmYiOiI5ZDcwZjM5Yi1lMjg3LTQ0MzctOGNkMy1jZjE5ZTIzMGQ5NTAiLCJleHAiOjE3MzI5Nzk3NDB9.N7W05Kn3o3NO_YT6BXJ_8VCg8X3H4aYL0ZyYCUHM1jg"
+					}
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"role\": \"Admin\",\r\n    \"username\": \"new_user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/api/users/1"
+			},
+			"response": []
+		},
+		{
+			"name": "create_article",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMjk4MzM5MywianRpIjoiZjk5OGEwNTMtNjhmZS00YTVjLWIzMGMtMjA3ZGQ4YzcyMTZhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3MzI5ODMzOTMsImNzcmYiOiJlZWU0Zjc3Mi1hNmFhLTRjMjctODU3OS1hMzVjMWZlNTQ4NjgiLCJleHAiOjE3MzI5ODY5OTN9.LpsJmdSJ4AzQLXbmGR50mHrNITyvbwRJOlvMlF3Hsx8"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Understanding\",\r\n  \"content\": \"Flask\",\r\n  \"user_id\": 3\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/api/articles"
+			},
+			"response": []
+		},
+		{
+			"name": "get_article",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMjk4MzM5MywianRpIjoiZjk5OGEwNTMtNjhmZS00YTVjLWIzMGMtMjA3ZGQ4YzcyMTZhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3MzI5ODMzOTMsImNzcmYiOiJlZWU0Zjc3Mi1hNmFhLTRjMjctODU3OS1hMzVjMWZlNTQ4NjgiLCJleHAiOjE3MzI5ODY5OTN9.LpsJmdSJ4AzQLXbmGR50mHrNITyvbwRJOlvMlF3Hsx8"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Understanding\",\r\n  \"content\": \"Flask\",\r\n  \"user_id\": 3\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/api/articles"
+			},
+			"response": []
+		},
+		{
+			"name": "get_article_by_title",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMzAwMzc2NSwianRpIjoiNDQ5ZDJkMjMtODE1MS00MzFkLWJmOWMtZTNkYzJhNjA3YzA5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3MzMwMDM3NjUsImNzcmYiOiJjYTlhZjc0NS0zZDUyLTQ4MzktOWYyMC1iMDI4NmVhY2E3MGIiLCJleHAiOjE3MzMwMDczNjV9.MUaCZW1DXNC4ISxNVA27IusSulD0m6hgBK1xHQxjVco"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Understanding\",\r\n  \"content\": \"Flask\",\r\n  \"user_id\": 3\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/articles/search?title=Understanding47",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"articles",
+						"search"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Understanding47"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_article_by_id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMjk4MzM5MywianRpIjoiZjk5OGEwNTMtNjhmZS00YTVjLWIzMGMtMjA3ZGQ4YzcyMTZhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3MzI5ODMzOTMsImNzcmYiOiJlZWU0Zjc3Mi1hNmFhLTRjMjctODU3OS1hMzVjMWZlNTQ4NjgiLCJleHAiOjE3MzI5ODY5OTN9.LpsJmdSJ4AzQLXbmGR50mHrNITyvbwRJOlvMlF3Hsx8"
+					}
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Understanding\",\r\n  \"content\": \"Flask\",\r\n  \"user_id\": 3\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/api/articles/11"
+			},
+			"response": []
+		},
+		{
+			"name": "delete_article_by_id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMjk4MzM5MywianRpIjoiZjk5OGEwNTMtNjhmZS00YTVjLWIzMGMtMjA3ZGQ4YzcyMTZhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3MzI5ODMzOTMsImNzcmYiOiJlZWU0Zjc3Mi1hNmFhLTRjMjctODU3OS1hMzVjMWZlNTQ4NjgiLCJleHAiOjE3MzI5ODY5OTN9.LpsJmdSJ4AzQLXbmGR50mHrNITyvbwRJOlvMlF3Hsx8"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Understanding\",\r\n  \"content\": \"Flask\",\r\n  \"user_id\": 3\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/api/articles/11"
+			},
+			"response": []
+		},
+		{
+			"name": "users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMjkxMTYxNCwianRpIjoiMGYxNDk0OTYtYmYwYi00NmJmLTg2MjEtOTJlOWJmYzcwNTUwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzMyOTExNjE0LCJjc3JmIjoiMmZjN2E1N2EtMTlkNi00ZmVkLWJkZWYtOWFlZWFlNWY0ZTY5IiwiZXhwIjoxNzMyOTE1MjE0fQ.4jedF-FhiX82C9zh8i76J0PVO_IU0QsoQvuh5r4slH4"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/api/users"
+			},
+			"response": []
+		},
+		{
+			"name": "users_by_username",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMzAwNjg2NSwianRpIjoiOTE5OWZkYzQtNGM0NS00ZTIxLWI4NmQtMjMwNTVkZjA5ZDQ3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3MzMwMDY4NjUsImNzcmYiOiI3MDMwNTk1ZC1hZTI2LTRiY2EtYWIyYy0zMGZkOWRlNGE2ODEiLCJleHAiOjE3MzMwMTA0NjV9.SnSjb1-t7MW1TY6Da53ZHciirDbcykdRyhlU9uSvIKk"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/users/search?username=newuser2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"search"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "newuser2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login_user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Olesia\",\r\n    \"password\": \"1234\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/register"
+			},
+			"response": []
+		},
+		{
+			"name": "user_id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMjkxNjU1NCwianRpIjoiOWM5YWY5ZTAtYTdjOC00OThjLTk0ODQtZGU2MjIwMmZiMGE4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3MzI5MTY1NTQsImNzcmYiOiIwYzFiYjc5NC0xYzUzLTQ3ZWMtYmFkMC1iMjMwZjA4MWVkOWMiLCJleHAiOjE3MzI5MjAxNTR9.LJr3G6qa_P4Nu5BoPSa03qY2cQCiJBto-EA0hKXXobQ"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/api/users/1"
+			},
+			"response": []
+		},
+		{
+			"name": "delete_user_by_id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMzE0MDM3MywianRpIjoiYzdkNmE5ZTgtMDhkZi00NDkxLTk2NTMtMzhmOWJlOGIwNzhiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3MzMxNDAzNzMsImNzcmYiOiI4ODE2NDViMi0wZjlhLTRkZGQtOThmMy1lYTU2YWVjZmY2YTgiLCJleHAiOjE3MzMxNDM5NzN9.O90pALId2zer5gsNmE9JXvVcdaWpLVCMHciOxHsfWBc"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/api/users/3"
+			},
+			"response": []
+		}
+	]
+}
