@@ -1,6 +1,8 @@
 
 # User Articles Manager
 
+PUBLIC URL: http://13.60.225.69/apidocs/
+
 ## Description
 
 User Articles Manager is a simple REST API built with Flask for managing users and their associated articles. The system allows you to add, retrieve, update, and delete users and articles. The data is stored in a PostgreSQL database. This project is containerized using Docker for easy setup and deployment.
