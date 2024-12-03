@@ -27,17 +27,17 @@ User Articles Manager is a simple REST API built with Flask for managing users a
 
 ### **Authorization**
 - JWT-based authentication ensures secure access to API endpoints.
-- Role-based access control (e.g., Admin, Viewer) is supported.
+- Role-based access control (e.g., Admin, Viewer, Editor) is supported.
 
 ---
 
 ## Roles and Permissions
 
-| Role   | Permissions                                        |
-|--------|----------------------------------------------------|
-| Admin  | Full access to all endpoints.                      |
-| Editor | Can view and update articles.                      |
-| Viewer | Can view articles and create their own articles.   |
+| Role   | Permissions                                                          |
+|--------|----------------------------------------------------------------------|
+| Admin  | Full access to all endpoints.                                        |
+| Editor | Can view and update all articles.                                    |
+| Viewer | Can view all articles and create, update, delete their own articles. |
 
 ---
 
