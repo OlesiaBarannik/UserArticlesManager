@@ -96,7 +96,7 @@ docker-compose up --build
 Run the following command to create sample data:
 
 ```bash
-docker-compose exec web poetry run flask create-sample-data
+docker-compose exec <container_name_or_id> poetry run flask create-sample-data
 ```
 
 ### **Manually Create Data via Flask Shell**
