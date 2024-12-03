@@ -138,8 +138,8 @@ The current test coverage is **92%**, ensuring high reliability and robustness o
   Example Request Body:
   ```json
   {
-      "username": "admin",
-      "password": "adminpass"
+      "username": "login",
+      "password": "password"
   }
   ```
   Response:
@@ -159,7 +159,7 @@ The current test coverage is **92%**, ensuring high reliability and robustness o
       {
           "id": "1",
           "role": "Admin",
-          "username": "admin"
+          "username": "name"
       }
   ]
   ```
